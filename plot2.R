@@ -1,0 +1,7 @@
+power<-read.csv("household_power_consumption.txt", header=TRUE, sep=";", na.strings = "?")
+power2<-subset(power,Date=="1/2/2007" | Date=="2/2/2007")
+power2$datetime<-paste(power2$Date,power2$Time)
+power2$datetime2 <- strptime(power2$datetime, format="%d/%m/%Y %H:%M:%S")
+par(mfrow=c(1,1))
+plot(power2$datetime2,power2$Global_active_power, type="n", ylab="Global Active Power (kilowatts)", xlab="")
+lines(power2$datetime2,power2$Global_active_power)
