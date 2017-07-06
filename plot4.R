@@ -18,3 +18,5 @@ legend("topright", legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
 #Bottom Right
 plot(power2$datetime2,power2$Global_reactive_power, type="n", ylab="Global_reactive_power", xlab="datetime")
 lines(power2$datetime2,power2$Global_reactive_power)
+dev.copy(png,filename="plot4.png")
+dev.off()

@@ -2,4 +2,5 @@ power<-read.csv("household_power_consumption.txt", header=TRUE, sep=";", na.stri
 power2<-subset(power,Date=="1/2/2007" | Date=="2/2/2007")
 par(mfrow=c(1,1))
 hist(power2$Global_active_power,main="Global Active Power", xlab = "Global Active Power (kilowatts)", col = "red")
-
+dev.copy(png,filename="plot1.png")
+dev.off()
